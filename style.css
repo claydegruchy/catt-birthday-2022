@@ -1,0 +1,159 @@
+body {
+  font-family: "Norse", cursive;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222222;
+}
+
+#container {
+  transform: scale(1.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#outer-ring {
+  width: 365px;
+  height: 365px;
+  border-radius: 50%;
+  border: 2px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#runes {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  animation: rotation 11s linear;
+}
+
+.rune {
+  position: absolute;
+  font-size: 40px;
+  height: 100%;
+
+  color: aliceblue;
+  top: 0;
+  transform-origin: center;
+}
+
+#inner-ring {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 2px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+svg {
+  width: 90%;
+  height: 90%;
+}
+
+path {
+  stroke: #222222;
+}
+
+circle {
+  stroke: #222222;
+}
+
+@keyframes line-animation {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes rotation {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
+}
+
+.pul {
+  animation: pulse 10s infinite;
+  -webkit-animation: pulse 10s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    fill: #ff0000;
+  }
+  17% {
+    fill: #ffff00;
+  }
+  33% {
+    fill: #00ff00;
+  }
+  50% {
+    fill: #00ffff;
+  }
+  67% {
+    fill: #0000ff;
+  }
+  83% {
+    fill: #ff00ff;
+  }
+  100% {
+    fill: #ff0000;
+  }
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    fill: #ff0000;
+  }
+  17% {
+    fill: #ffff00;
+  }
+  33% {
+    fill: #00ff00;
+  }
+  50% {
+    fill: #00ffff;
+  }
+  67% {
+    fill: #0000ff;
+  }
+  83% {
+    fill: #ff00ff;
+  }
+  100% {
+    fill: #ff0000;
+  }
+}
+
+#inner-ring {
+  transition: filter 1s;
+}
+#inner-ring.glow {
+  -webkit-filter: drop-shadow(0 0 5px rgba(255, 0, 255, 0.7));
+  filter: drop-shadow(0 0 5px rgba(255, 0, 255, 0.7));
+  text-decoration: none;
+}
